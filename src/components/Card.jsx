@@ -13,7 +13,7 @@ function Card(props) {
             <p className="">{props.price}</p>
           </div>
         </div>
-        <button className="bg-[#ED7474] justify-center items-center h-16 lg:h-10 hover:bg-pink-900 rounded-md  flex flex-col lg:flex-row mt-2 ">
+        <button className="bg-teal-400 justify-center items-center h-16 lg:h-10 hover:bg-pink-900 rounded-md  flex flex-col lg:flex-row mt-2 ">
           <p className="text-lg font-semibold mr-2">Add to Chart</p>
 
           <p className="text-xl">

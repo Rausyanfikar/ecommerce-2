@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import { useState, useEffect } from 'react';
 import { Card, CardLoading } from '../components/Card';
+import Hero from '../components/Hero';
 
 const HomePages = () => {
   const state = {
@@ -62,6 +63,7 @@ const HomePages = () => {
   //   } else {
   return (
     <Layout>
+      <Hero />
       <div className="grid grid-flow-row auto-rows-max grid-cols-2 md:grid-cols-4 lg:grid-cols-4 m-2 gap-3">
         {state.products.map((item) => (
           <Card key={item.id} title={item.title} image={item.img} price={item.price} product={item.name} />
