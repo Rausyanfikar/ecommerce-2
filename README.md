@@ -10,8 +10,8 @@ Deploy :[]().
 
 ### Contact
 
-[Rausyan Fikar] (https://github.com/Rausyanfikar)
-[Zainal Malik] (https://github.com/zainal547)
+[Rausyan Fikar] (https://github.com/Rausyanfikar).
+[Zainal Malik] (https://github.com/zainal547).
 
 # Getting Started with Create React App
 
