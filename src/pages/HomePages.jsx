@@ -9,14 +9,18 @@ const HomePages = () => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    fetchProduct();
+  }, []);
   const fetchProduct = () => {
     axios
-      .get(`https://api.themoviedb.org/3/movie/now_playing?api_key=d06c4019966aa719f29e61a7c4ad76a8&language=en-US&page=1`)
+      .get(`http://3.83.173.201:80/products`)
       .then((response) => {
         // handle success
 
-        const { results } = response.data;
+        const results = response.data.data;
         setProduct(results);
+        console.log(results);
       })
       .catch(function (error) {
         // handle error
@@ -32,8 +36,8 @@ const HomePages = () => {
       <Layout>
         <Hero />
         <div className="grid grid-flow-row auto-rows-max grid-cols-2 md:grid-cols-4 lg:grid-cols-4 m-2 gap-3">
-          {state.products.map((item) => (
-            <Card key={item.id} title={item.title} image={item.img} price={item.price} product={item.name} />
+          {product.map((item) => (
+            <Card key={item.id} title={item.name} image={item.image} price={item.price} product={item.name} />
           ))}
         </div>
       </Layout>

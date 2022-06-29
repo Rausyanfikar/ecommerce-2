@@ -7,12 +7,12 @@ function Header() {
     <nav className="relative w-full flex flex-wrap items-center justify-between py-3 bg-teal-400 shadow-lg">
       <div className="container-fluid w-full flex flex-wrap items-center justify-between px-6">
         <div className="container-fluid">
-          <Link to="/" className="text-xl text-black font-bold">
+          <Link to="/" className="text-xl font-roboto text-black font-bold">
             Scarva
           </Link>
         </div>
         <ul className="ml-auto flex flex-row space-x-4 text-lg font-bold text-black ">
-          <li className="text-2xl font-bold ">
+          <li className="text-2xl font-roboto font-bold ">
             <BsCart />
           </li>
           <li>
