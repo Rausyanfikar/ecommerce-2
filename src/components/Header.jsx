@@ -1,6 +1,6 @@
-import React from 'react';
-import { BsCart } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { BsCart } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -16,7 +16,7 @@ function Header() {
             <BsCart />
           </li>
           <li>
-            <div>Register</div>
+            <Link to="/register">Register</Link>
           </li>
           <li>
             <Link to="/login">Login</Link>

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer(porps) {
   return (
@@ -12,7 +12,9 @@ function Footer(porps) {
               type="button"
               class="inline-block px-6 py-2 border-2 border-black text-black font-medium text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
             >
-              Sign up!
+              <Link to="/" className=" text-black font-bold">
+                Sign up!
+              </Link>
             </button>
           </p>
         </div>
