@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
@@ -20,6 +20,7 @@ function Login() {
       .then((response) => {
         // handle success
         console.log(response);
+
         localStorage.setItem('token', response.data.data.token);
         console.log(response.data.data.token);
         swal('Good job!', 'Succecss Login', 'success');

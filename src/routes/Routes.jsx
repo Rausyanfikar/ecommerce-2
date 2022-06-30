@@ -7,6 +7,7 @@ import Testimoni from '../pages/Testimoni';
 import AddProduct from '../pages/AddProduct';
 import EditProduct from '../pages/EditProduct';
 import MyProduct from '../pages/MyProduct';
+import Register from '../pages/Register';
 
 const App = () => {
   return (
@@ -14,7 +15,11 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePages />} />
         <Route path="/login" element={<Login />} />
+
         <Route path="/detail/:detail_id" element={<Detail />} />
+
+        <Route path="/register" element={<Register />} />
+
         <Route path="/testimoni" element={<Testimoni />} />
         <Route path="/addproduct" element={<AddProduct />} />
         <Route path="/myproduct" element={<MyProduct />} />
