@@ -20,6 +20,8 @@ function Login() {
       .then((response) => {
         // handle success
         console.log(response);
+        localStorage.setItem('token', response.data.data.token);
+        console.log(response.data.data.token);
         swal('Good job!', 'Succecss Login', 'success');
         navigate('/', { replace: true });
       })

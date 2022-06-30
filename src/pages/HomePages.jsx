@@ -4,10 +4,12 @@ import { useState, useEffect } from 'react';
 import { Card, CardLoading } from '../components/Card';
 import Hero from '../components/Hero';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const HomePages = () => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchProduct();
@@ -37,7 +39,7 @@ const HomePages = () => {
         <Hero />
         <div className="grid grid-flow-row auto-rows-max grid-cols-2 md:grid-cols-4 lg:grid-cols-4 m-2 gap-3">
           {product.map((item) => (
-            <Card key={item.id} title={item.name} image={item.image} price={item.price} product={item.name} />
+            <Card key={item.id} title={item.name} image={item.image} price={item.price} product={item.name} onClickItem={() => navigate(`detail/${item.id}`)} />
           ))}
         </div>
       </Layout>
