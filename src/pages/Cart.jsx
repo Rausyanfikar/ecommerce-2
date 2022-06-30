@@ -1,26 +1,21 @@
 import React from "react";
 import Layout from "../components/Layout";
-import { BsCart } from "react-icons/bs";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Card, CardLoading } from "../components/Card";
-import { Link, useParams } from "react-router-dom";
 
 function Detail(props) {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
-  const params = useParams();
 
   useEffect(() => {
     fetchDetail();
   }, []);
 
   const fetchDetail = () => {
-    console.log(params);
-    const { detail_id } = params;
-
     axios
-      .get(`http://3.83.173.201:80/products/${detail_id}`)
+      .get(`http://3.83.173.201:80/cart`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } })
+
       .then((response) => {
         // handle success
 
@@ -33,26 +28,6 @@ function Detail(props) {
         console.log(error);
       })
       .finally(() => setLoading(false));
-  };
-  const addToCart = () => {
-    axios
-      .post(
-        "http://3.83.173.201:80/cart",
-        {
-          product_id: product.id,
-          qty: 1,
-        },
-        { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }
-      )
-      .then((response) => {
-        // handle success
-
-        console.log(response);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      });
   };
 
   if (loading) {
@@ -71,14 +46,11 @@ function Detail(props) {
               <p>{product.description}</p>
 
               <button className="bg-teal-400 justify-center items-center h-16 lg:h-10 hover:bg-teal-500 rounded-md  flex flex-col lg:flex-row mt-2 p-3">
-                <Link to="/cart">
-                  <p className="text-lg font-semibold mr-2" onClick={() => addToCart()}>
-                    Add to Cart
-                  </p>
-                  <p className="text-xl">
-                    <BsCart />
-                  </p>
-                </Link>
+                <p className="text-lg font-semibold mr-2">+</p>
+              </button>
+              <p>(0)</p>
+              <button className="bg-teal-400 justify-center items-center h-16 lg:h-10 hover:bg-teal-500 rounded-md  flex flex-col lg:flex-row mt-2 p-3">
+                <p className="text-lg font-semibold mr-2">-</p>
               </button>
             </div>
           </div>

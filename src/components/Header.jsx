@@ -7,19 +7,26 @@ function Header() {
     <nav className="relative w-full flex flex-wrap items-center justify-between py-3 bg-teal-400 shadow-lg">
       <div className="container-fluid w-full flex flex-wrap items-center justify-between px-6">
         <div className="container-fluid">
-          <Link to="/" className="text-xl font-roboto text-black font-bold">
+          <Link to="/" className="text-xl font-roboto text-black font-bold hover:text-white">
             Scarva
           </Link>
         </div>
         <ul className="ml-auto flex flex-row space-x-4 text-lg font-bold text-black ">
           <li className="text-2xl font-roboto font-bold ">
-            <BsCart />
+            <Link to="/cart" className="hover:text-white relative">
+              <BsCart />
+              <span className="text-white text-sm text-center rounded-full absolute right-6 top-1 leading-5  w-5 h-6"></span>
+            </Link>
           </li>
           <li>
-            <Link to="/register">Register</Link>
+            <Link to="/register" className="hover:text-white">
+              Register
+            </Link>
           </li>
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="/login" className="hover:text-white">
+              Login
+            </Link>
           </li>
         </ul>
       </div>

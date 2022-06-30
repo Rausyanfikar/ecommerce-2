@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import Detail from "../pages/Detail";
 import Testimoni from "../pages/Testimoni";
 import Register from "../pages/Register";
+import Cart from "../pages/Cart";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/detail" element={<Detail />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/testimoni" element={<Testimoni />} />
         <Route
           path="*"

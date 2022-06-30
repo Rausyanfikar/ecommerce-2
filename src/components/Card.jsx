@@ -1,5 +1,6 @@
-import React from 'react';
-import { BsCart } from 'react-icons/bs';
+import { data } from "autoprefixer";
+import React from "react";
+import { BsCart } from "react-icons/bs";
 
 function Card(props) {
   return (
@@ -15,7 +16,6 @@ function Card(props) {
         </div>
         <button className="bg-teal-400 justify-center items-center h-16 lg:h-10 hover:bg-teal-500 rounded-md  flex flex-col lg:flex-row mt-2 ">
           <p className="text-lg font-semibold mr-2">Add to Cart</p>
-
           <p className="text-xl">
             <BsCart />
           </p>
@@ -25,7 +25,7 @@ function Card(props) {
   );
 }
 
-function CardLoading(props) {
+function CardLoading() {
   return (
     <>
       <div className="flex bg-white w-full h-screen">

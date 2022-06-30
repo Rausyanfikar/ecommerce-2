@@ -1,9 +1,9 @@
-import React from 'react';
-import Layout from '../components/Layout';
-import { useState, useEffect } from 'react';
-import { Card, CardLoading } from '../components/Card';
-import Hero from '../components/Hero';
-import axios from 'axios';
+import React from "react";
+import Layout from "../components/Layout";
+import { useState, useEffect } from "react";
+import { Card, CardLoading } from "../components/Card";
+import Hero from "../components/Hero";
+import axios from "axios";
 
 const HomePages = () => {
   const [product, setProduct] = useState([]);
@@ -28,6 +28,26 @@ const HomePages = () => {
       })
       .finally(() => setLoading(false));
   };
+  const addToCart = () => {
+    axios
+      .post(
+        "http://3.83.173.201:80/cart",
+        {
+          product_id: product.id,
+          qty: 1,
+        },
+        { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }
+      )
+      .then((response) => {
+        // handle success
+
+        console.log(response);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+  };
 
   if (loading) {
     return <CardLoading />;
@@ -37,7 +57,7 @@ const HomePages = () => {
         <Hero />
         <div className="grid grid-flow-row auto-rows-max grid-cols-2 md:grid-cols-4 lg:grid-cols-4 m-2 gap-3">
           {product.map((item) => (
-            <Card key={item.id} title={item.name} image={item.image} price={item.price} product={item.name} />
+            <Card key={item.id} title={item.name} image={item.image} price={item.price} product={item.name} onClick={() => addToCart()} />
           ))}
         </div>
       </Layout>
